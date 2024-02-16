@@ -24,7 +24,7 @@ public class Ex01_Array {
 		
 		//배열의 길이 : 배열 요소의 개수 = 배열.length
 		int N = arr.length;
-		System.out.println("배열의 길이 : " + arr.length);
+		System.out.println("배열의 길이 : " + N);
 		
 		// for : ctrl + space 2번째 옵션
 		for (int i = 0 ; i < arr.length; i++) {

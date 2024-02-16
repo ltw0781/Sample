@@ -31,7 +31,7 @@ public class _1358 {
 		// N = 5
 		int N = sc.nextInt();
 		int cheek = N / 2 + 1;   // cheek = 3  
-		int num = N / 2;         // num = 2
+		int num = N % 2;         // num = 2
 		
 		for (int i = 1 ; i <= N / 2 + 1 ; i++) {
 			for (int j = 1 ; j < cheek ; j++) {

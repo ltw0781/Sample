@@ -28,7 +28,7 @@ public class Ex02_Max {
 		//2. 입력받은 정수를 변수N에 대입한다.
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt(); //입력받을 데이터 개수
-		int arr[] = new int[N];
+		int arr[] = new int[N]; // 입력
 		// 최댓값 선언
 		int max = Integer.MIN_VALUE; //int 타입의 최솟값 : -21억
 		// 만약 구하는 값이 최솟값일 경우는 MIN_VALUE가 아닌 Max_VALUE를 넣어줘서 가장 큰 값을 아래 값과 비교하게 한다.
