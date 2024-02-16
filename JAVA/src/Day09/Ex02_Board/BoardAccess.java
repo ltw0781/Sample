@@ -50,6 +50,7 @@ public class BoardAccess implements BoardInterface{
 		return boardList;
 	}
 
+	// 게시글 조회
 	@Override
 	public Board read(int no) {
 		if (no > 5 || no < 0) {
@@ -75,6 +76,7 @@ public class BoardAccess implements BoardInterface{
 		return 1;				//수정된 게시글 1건
 	}
 
+	// 게시글 삭제
 	@Override
 	public int delete(int no) {
 		if (no > 5 || no < 0) {
@@ -89,7 +91,6 @@ public class BoardAccess implements BoardInterface{
 			
 		}
 		
-		// 세시글 삭제
 		boardList[no-1] = null;				//null : 데이터가 없음을 의미
 		
 		//i 시작값 : 삭제할 글 index+1
