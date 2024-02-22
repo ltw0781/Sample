@@ -84,9 +84,6 @@ public class Ex07_File {
 		if(file.isDirectory())System.out.println("디렉토리");
 		if(file.isFile())System.out.println("일반파일");
 		
-		
-		
-		
 		long update = file.lastModified();
 		Date date = new Date(update);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -147,8 +144,6 @@ public class Ex07_File {
 		
 	}
 	
-	
-	
 	public static void main(String[] args) {
 		
 		// 메뉴 번호
@@ -197,8 +192,5 @@ public class Ex07_File {
 		} while (true);
 		
 	}
-
-
-	
 	
 }
