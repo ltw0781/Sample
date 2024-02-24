@@ -17,41 +17,39 @@ public class Mission_2 {
 		
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
-		int sum1 = 0,sum2 = 0;
+		int a = 1;
+		int count;
 		
-		
-		//짝수
-		for(int i=1;i<=N;i++) {		
-			if(i%2==1) {
-				sum1+=i;
-				System.out.print(i+"+");
+		for (int i = 1 ; i < N; i+=2) {
+			System.out.print(i);
+			if (i == (N-1)) {
+				System.out.print(" = ");
+			}
+			else {
+				System.out.print(" + ");
 			}
 		}
-		System.out.println(sum1);
-		
-		
-		//홀수
-		for(int i=1;i<=N;i++) {			
-			//짝수
-			if(i%2==0) {
-				sum1+=i;
-				System.out.print(i+"+");
-			//홀수	
-			}else {
-				sum2=+i;
-//				System.out.print(i);
-			}
-		}
-		
-		
-		
 		System.out.println();
-		// 약수
-		for(int i=1;i<=N;i++) {	
-			if(N%i==0) {
-				System.out.print(i+" ");
-			}			
-		}
-		
+//		
+//		for (int i = 2 ; i <= N ; i+=2) {
+//			System.out.print(i);
+//			if (i == N) {
+//				System.out.print(" = ");
+//			}
+//			else {
+//				System.out.print(" + ");
+//			}
+//		}
+//		System.out.println();
+//		for (int i = 2 ; i <= N ; i++) {
+//			System.out.print();
+//			if (i == N) {
+//				System.out.print(" = ");
+//			}
+//			else {
+//				System.out.print(" + ");
+//			}
+//		}
+
 	}
 }
