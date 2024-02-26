@@ -7,7 +7,7 @@ import Day16.Board.DTO.Board;
 
 /**
  * 	게시판 기능 - 비즈니스 로직 클래스
- * 
+ *  의존성 : ?? 프레임워크를 통해 배움
  */
 
 public class BoardServiceImpl implements BoardService{

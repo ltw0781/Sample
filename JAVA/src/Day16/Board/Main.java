@@ -86,7 +86,7 @@ public class Main {
 		System.out.println("# 제목 : " + title);
 		System.out.println("# 작성자 : " + writer);
 		System.out.println("----------------------------------");
-		System.out.println(content);
+		System.out.println("# " + content);
 		System.out.println("# 등록일자 : " + reg);
 		System.out.println("# 수정일자 : " + upd);
 		System.out.println("# 글번호 : " + no);
@@ -103,6 +103,7 @@ public class Main {
 		System.out.println("##### 게시글 조회 #####");
 		System.out.print("글 번호 : ");
 		int no = sc.nextInt();
+		sc.nextLine();
 		// 글번호(no)를 전달하여 게시글 정보 데이터 요청
 		Board board = boardService.select(no);
 		// 게시글 번호 출력
@@ -118,7 +119,7 @@ public class Main {
 		
 		System.out.println("##### 게시글 등록 #####");
 
-		//
+		
 		Board board = input();
 		// 게시글 등록 요청
 		int result = boardService.insert(board);

@@ -178,7 +178,7 @@ public class BoardDAO extends JDBConnection{
 		int result = 0;			// 결과 : 적용된 데이터 건수
 		
 		String sql = " DELETE FROM  board "
-		           + "     WHERE no = ? ";
+		           + " WHERE no = ? ";
 		
 		try {
 			psmt = con.prepareStatement(sql);				// ㅋ쿼리 실행 객체 생성
