@@ -17,6 +17,7 @@ public class StreamReduce {
 		
 		// reduce 연산
 		// reduce( 초기 값, (누적될 값, 현재요소) -> 수식(반환될 값) );
+		//           a        b       c
 		// : 모든 스트림 요소를 하나의 값으로 누적해서 줄이는 연산
 		int result = list.stream()
 						 .reduce(0, (sum, a) -> sum + a);
