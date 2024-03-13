@@ -30,6 +30,7 @@ public class LottoArray {
 					// 현재 뽑은 랜덤 수가, 기존의 수들과 똑같으면, 다시 뽑는다.
 					if(rand == lotto[k]) {
 						
+						
 						j--;
 						break;
 						

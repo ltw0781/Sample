@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;D
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: black;
+            height: 60px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            float: left;
+            display: block;
+            width: 100px;
+            height: 100%;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        nav a:hover { background-color: cornflowerblue; }
+
+        section{
+            margin: 0 auto;
+            width: 1024px;
+            background-color: lightblue;
+            border:1px solid black;
+            padding: 10px;
+            min-height:200px;
+        }
+        footer{
+            background-color: lightgray;
+            min-height: 80px;
+        }
+        footer .copy{
+            float: left;
+            line-height: 80px;
+            padding: 0 20px;
+        }
+        footer .family{
+            float: left;
+            line-height: 80px;
+            min-width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h1>시맨택 레이아웃</h1>
+    <header>
+        <nav>
+            <a href="http://naver.com">네이버</a>
+            <a href="http://kakao.com">카카오</a>
+            <a href="http://youtube.com">유튜브</a>
+        </nav>
+    </header>
+
+    <section>
+        <h1>My Page</h1>
+        <p>My Page 에 오신 걸 환영합니다:p</p>
+    </section>
+
+    <section>
+        <h1>2번째 섹션</h1>
+        <p>2번째 영역입니다.</p>
+        <article>
+            이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지 존속하며 그 직무를 행한다.
+
+국군은 국가의 안전보장과 국토방위의 신성한 의무를 수행함을 사명으로 하며, 그 정치적 중립성은 준수된다. 국가는 국민 모두의 생산 및 생활의 기반이 되는 국토의 효율적이고 균형있는 이용·개발과 보전을 위하여 법률이 정하는 바에 의하여 그에 관한 필요한 제한과 의무를 과할 수 있다.
+        </article>
+    </section>
+
+    <section>
+        <h1>3번째 섹션</h1>
+        <p>3번째 섹션입니다.</p>
+    </section>
+
+    <footer>
+        <p class="copy">Copyright &copy; ALOHA CLASS. All Rights Reserved</p>
+        <p class="family">
+            <select name="family" id="family">
+                <option value="1">네이버</option>
+                <option value="2">카카오</option>
+                <option value="3">유튜브</option>
+            </select>
+        </p>
+    </footer>
+
+
+    
+</body>
+</html>

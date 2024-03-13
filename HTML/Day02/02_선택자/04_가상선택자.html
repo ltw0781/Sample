@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 선택자</title>
+    <style>
+        h1 {
+            font-size: 2.5rem;
+            color: #25a9bd;
+        }
+        section {
+            padding: 10px;
+            border: 5px solid orange;
+        }
+
+        /* :first-of-type   - 첫 요소를 선택 */
+        section:first-of-type { color: #cc2222; }
+
+        /* :last-of-type  - 마지막 요소를 선택 */
+        /* ::first-letter - 첫 글자를 선택 */
+        section:last-of-type::first-letter {
+            font-size: 2.4em;
+            float: left;
+            padding: 0 2px;
+            margin: -1px 3px 0 0;
+            font-weight: bold;
+            color: orange;
+        }
+
+        section em {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        /* :before - 요소가 시작되기 전을 선택 */
+        section em::before {
+            content: "\"";
+            padding-right: 0.5em;
+            color: red;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* :after - 요소가 끝난 다음을 선택 */
+        section em:after {
+            content: "\"";
+            padding-left: 0.5em;
+            color: red;
+            font-weight: bold;
+        }
+
+        /* :enabled - 활성화된 태그를 선택 */
+        input:enabled { background-color: aqua;}
+        /* :disabled - 비활성화된 태그를 선택 */
+        input:disabled { background-color: gray; }
+        input::placeholder { color: white; }
+
+    </style>
+</head>
+<body>
+    <h1>가상 선택자</h1>
+    <section>
+        모든 국민은 소급입법에 의하여 참정권의 제한을 받거나 재산권을 박탈당하지 아니한다. 국회의원의 선거구와 비례대표제 기타 선거에 관한 사항은 법률로 정한다. 모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 형사피해자는 법률이 정하는 바에 의하여 당해 사건의 재판절차에서 진술할 수 있다.
+    </section>
+    <section>
+        <em>성공의 8할은 출석하는 것이다.</em>
+        모든 국민은 소급입법에 의하여 참정권의 제한을 받거나 재산권을 박탈당하지 아니한다. 국회의원의 선거구와 비례대표제 기타 선거에 관한 사항은 법률로 정한다. 모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 형사피해자는 법률이 정하는 바에 의하여 당해 사건의 재판절차에서 진술할 수 있다.
+    </section>
+    <section>
+        모든 국민은 소급입법에 의하여 참정권의 제한을 받거나 재산권을 박탈당하지 아니한다. 국회의원의 선거구와 비례대표제 기타 선거에 관한 사항은 법률로 정한다. 모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 형사피해자는 법률이 정하는 바에 의하여 당해 사건의 재판절차에서 진술할 수 있다.
+    </section>
+
+    <form action="">
+        <p>
+            <label for="">이름</label>
+            <input type="text">
+        </p>
+        <p>
+            <label for="">이메일</label>
+            <input type="text" placeholder="sample@mail.com" disabled>
+        </p>
+    </form>
+</body>
+</html>
