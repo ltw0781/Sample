@@ -12,6 +12,7 @@
     height: 200px;
 }
 
+/* clearfix */
 .inner:after {
     clear: both;
     display: block;
