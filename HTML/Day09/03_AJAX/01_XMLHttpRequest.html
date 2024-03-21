@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 로 요청하기</title>
+</head>
+<body>
+    <h1>AJAX 요청하기</h1>
+    <h3>JavaScript 에서는 XMLHttpRequest 객체로 비동기 요청을 한다.</h3>
+
+    <h5>게시글 조회</h5>
+    <label for="boardNo">게시글 번호</label>
+    <input type="text" name="no" id="no">
+    <button onclick="getBoard()">조회</button>
+    <hr>
+    <div>
+        <h5>조회된 게시글 정보</h5>
+        <h3><span>제목 : </span><span id="title"></span></h3>
+        <h3><span>작성자 : </span><span id="writer"></span></h3>
+        <textarea name="" id="content" cols="50" rows="10" readonly></textarea>
+    </div>
+
+
+    <script>
+        function getBoard(){
+            // XMLHttpRequest 객체 생성
+            let request = new XMLHttpRequest()
+
+            // 입력한 글 번호 가져오기
+            let boardNo = document.getElementById('no').value
+
+            // 요청 설정
+            // request.open("요청메소드", url, 비동기여부)
+            let url = `http://192.168.30.119:8080/api/board/${boardNo}`
+            request.open("GET", url, true)
+
+            // 응답 확인
+            
+            request.onreadystatechange = function() {
+                // request.readyState : 클라이언트의 준비 상태 변수
+                // - UNSENT     : open() 호출 전
+                // - OPENED     : open() 호출된 상태
+                // - LOADING    : 응답 데이터를 가져오고 있는 상태
+                // - DONE       : 요청 완료
+    
+                // request.status      : 응답 상태 코드
+                // ex) 200, 404 NOT FOUND, 500 INTERNAL ERROR
+                // 요청 완료 시, 성공적으로 처리되었을 때
+                let response = ''
+
+                // 요청 완료 및 응답 성공 시
+                if (request.readyState == request.DONE && request.status == 200){
+                    // request.responseText : 응답데이터
+                    response = response.responseText
+
+                    if (response == '')
+                    alert('응답된 데이터가 없습니다.')
+                    else{
+                        let board = JSON.parse(Response)
+
+                        let title = document.getElementById('title')
+                        let writer = document.getElementById('writer')
+                        let content = document.getElementById('content')
+
+                        title.textContent = board.title
+                        writer.textContent = board.writer
+                        content.value = board.content
+
+                    }
+                }
+
+            }
+
+            // 요청 전송
+            // request.send(데이터)
+            request.send()
+        }
+    </script>
+</body>
+</html>
