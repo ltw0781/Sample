@@ -1,4 +1,3 @@
-
 package com.joeun.DTO;
 
 import java.util.Date;
@@ -11,6 +10,7 @@ import java.util.Date;
  *  - 내용
  *  - 등록일자
  *  - 수정일자
+ *  - 조회수
  */
 public class Board {
 	
@@ -20,7 +20,9 @@ public class Board {
 	private String content;
 	private Date regDate;
 	private Date updDate;
+	private int view;
 	
+
 	// 생성자
 	public Board() {
 		this("제목없음", "글쓴이없음", "내용없음");
@@ -81,6 +83,15 @@ public class Board {
 	public void setUpdDate(Date updDate) {
 		this.updDate = updDate;
 	}
+
+	public int getView() {
+		return view;
+	}
+
+	public void setView(int view) {
+		this.view = view;
+	}
+
 
 	@Override
 	public String toString() {

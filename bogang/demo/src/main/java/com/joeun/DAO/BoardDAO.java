@@ -103,8 +103,8 @@ public class BoardDAO extends JDBConnection {
 	public int insert(Board board) {
 		int result = 0;		// 결과 : 적용된 데이터 건수
 		
-		String sql = " INSERT INTO board (NO,title, writer, content) "
-				   + " VALUES(SEQ_BOARD.NEXTVAL , ?, ?, ? ) ";
+		String sql = " INSERT INTO board (no, title, writer, content) "
+				   + " VALUES(SEQ_BOARD.NEXTVAL, ?, ?, ? ) ";
 		
 		try {
 			psmt = con.prepareStatement(sql);			// 쿼리 실행 객체 생성
