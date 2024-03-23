@@ -1,4 +1,5 @@
 
+
 /* reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -240,16 +241,17 @@ nav.mobile ul li a:hover {
 }
 
 .sidebar .sidemenu li a:hover {
-    background: linear-gradient(180deg, #FC466B 0%, #3F5EFB 100%);
+    background: 
+    linear-gradient(180deg, #FC466B 0%, #3F5EFB 100%);
     color: white;
 }
 
 .sidebar .sidemenu li h3 { font-size: 20px; }
 .sidebar .sidemenu li p { font-size: 12px; } 
 
-/* 플로팅 버튼 */
 
-.floating{
+/* 플로팅 버튼 */
+.floating {
     position: fixed;
     right: 40px;
     bottom: 80px;
@@ -258,8 +260,7 @@ nav.mobile ul li a:hover {
     height: 50px;
     border-radius: 50%;
 }
-
-.floating a{
+.floating a {
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -271,46 +272,44 @@ nav.mobile ul li a:hover {
     background-color: #FC466B;
     user-select: none;
 }
+.floating i { color: white; }
 
-.floating i{
-    color:white;
-}
-
-html{
+html {
+    /* 스크롤을 부드럽게 이동 */
     scroll-behavior: smooth;
 }
 
-.container{
+
+/* 메인 페이지 */
+.container {
     width: var(--container-size);
     margin: 0 auto;
-    border: 1px solid hotpink;
+    /* border: 1px solid hotpink; */
     position: relative;
 }
 
-section{
+section {
     width: 100%;
     min-height: 400px;
     padding: 100px 0;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
-/* =============섹션01============= */
-
-#section1{
+/* ======================== 섹션01 ======================== */
+#section1 {
     position: relative;
     overflow: hidden;
     height: 600px;
     padding-top: 0;
 }
 
-/* 가로 슬라이드 */
+/* 가로슬라이드 */
 .slide {
     position: absolute;
     width: calc(var(--container-size) * 3);
     animation-name: slide;
     animation-duration: 16s;
     animation-iteration-count: infinite;
-
 }
 
 .slide img {
@@ -320,31 +319,27 @@ section{
 }
 
 @keyframes slide {
-    33.333%{
-        left:0;
+    33.333% {
+        left: 0;
     }
-    66.666%{
+    66.666% {
         left: calc(var(--container-size) * -1);
     }
-    100%{
-        left:calc(var(--container-size) * -2);
+    100% {
+        left: calc(var(--container-size) * -2);
     }
 }
+/* ======================== 섹션01 ======================== */
 
+/* ======================== 섹션02 ======================== */
+#section2 {}
 
-
-/* =============섹션01============= */
-/* =============섹션02============= */
-
-#section2{}
-
-.card-box{
-    height: 100%;
+.card-box {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.card{
+.card {
     width: 100%;
     max-width: 300px;
     height: 400px;
@@ -354,33 +349,126 @@ section{
     overflow: hidden;
 }
 
-.card .card-title{
-    text-align: center;
+.card .card-title { 
+    text-align: center; 
     font-size: var(--text-title);
     margin-top: 10px;
 }
-.card .card-content{
+.card .card-content {
     font-size: var(--text-normal);
-    padding: 10px 10px 40px;
+    padding: 10px 20px 40px;
 }
-.card .card-bottom{
+.card .card-bottom {
     display: flex;
     justify-content: space-between;
     padding: 20px;
 }
 
-
-.card .card-bottom i{
-    font-size: 32px;
+.card .card-bottom i { 
+    font-size:  32px;
     color: #FC466B;
 }
 
 
-/* =============섹션02============= */
+/* ======================== 섹션02 ======================== */
+
+<<<<<<< HEAD
+
+=======
+/* ======================== 섹션03,04 ======================== */
+.layout-detail {}
+.layout-detail .inner {
+    /* padding: 0 100px; */
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+}
+.layout-detail .inner .detail-left {}
+.layout-detail .inner .detail-left img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.layout-detail .inner .detail-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.layout-detail .inner .detail-right .content-box {}
+.layout-detail .inner .detail-right .content-box h3 {
+    font-size: 32px;
+}
+.layout-detail .inner .detail-right .content-box p {
+    font-size: 18px;
+}
+.layout-detail .inner .detail-right .btn-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 120px;
+    padding: 12px 24px;
+    background-color: var(--sub-color);
+    color: white;
+    border-radius: 10px;
+}
+
+/* layout-detail reverse */
+.layout-detail.reverse .detail-left { order: 2;}
+.layout-detail.reverse .detail-right { order: 1;}
+
+/* ======================== 푸터 ======================== */
+footer{
+    width: 100%;
+    min-height: 480px;
+    background-color: #212121;
+    margin-top: 50px;
+    position: relative;
+    color: white;
+}
+footer .footer-menu{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+footer .footer-menu .site-map{
+    display: flex;
+    column-gap: 100px;
+
+}
+footer .footer-menu .site-map .item{}
+footer .footer-menu .site-map .item ul{}
+footer .footer-menu .site-map .item ul li{
+    margin: 20px 0;
+}
+
+footer .footer-menu .family-site{}
+footer .footer-menu .family-site select{
+    position: relative;
+    padding: 10px 30px;
+    top: 15px;
+    left: 60px;
+    margin-left: 400px;
+}
+
+footer .copy{
+    text-align: center;
+    padding: 50px;
+
+}
+footer .copy p{}
+
+
+/* ======================== 섹션03,04 ======================== */
+>>>>>>> 8c7601be2c468117f5fb7d9a4a3489891befd074
 
 
 
+/* ======================== 섹션03,04 ======================== */
 
 
 
-
+/* ======================== 섹션03,04 ======================== */
