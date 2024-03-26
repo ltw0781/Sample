@@ -1,17 +1,15 @@
 package com.joeun;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
-import com.joeun.DAO.JDBConnection;
-
 /**
- * JavaFX App  
+ * JavaFX App
  */
 public class App extends Application {
 
@@ -19,7 +17,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("board/list"), 640, 480);
+        scene = new Scene(loadFXML("board/list"));
         stage.setScene(scene);
         stage.show();
     }

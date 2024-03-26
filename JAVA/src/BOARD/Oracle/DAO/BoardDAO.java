@@ -103,14 +103,14 @@ public class BoardDAO extends JDBConnection {
 	public int insert(Board board) {
 		int result = 0;		// 결과 : 적용된 데이터 건수
 		
-		String sql = " INSERT INTO board (NO,title, writer, content) "
+		String sql = " INSERT INTO board (NO, title, writer, content) "
 				   + " VALUES(SEQ_BOARD.NEXTVAL , ?, ?, ? ) ";
 		
 		try {
 			psmt = con.prepareStatement(sql);			// 쿼리 실행 객체 생성
 			psmt.setString( 1, board.getTitle() );		// 1번 ? 에 제목 매핑
 			psmt.setString( 2, board.getWriter() );		// 2번 ? 에 작성자 매핑
-			psmt.setString( 3, board.getContent() );	// 3번 ? 에 내용을 매핑
+			psmt.setString( 3, board.getContent() );		// 3번 ? 에 내용을 매핑
 			
 			result = psmt.executeUpdate();		// SQL 실행 요청, 적용된 데이터 개수를 받아온다.
 												// 게시글 1개 적용 성공 시, result : 1
