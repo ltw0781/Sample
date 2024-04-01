@@ -17,6 +17,10 @@
 	<c:if test="${sessionScope.loginId != null }">
 		<h5>${sessionScope.loginId } 님 환영합니다.</h5>
 		<a href="logout.jsp">로그아웃</a>
+		<ul>
+			<li><a href="<%= request.getContextPath() %>/board/list.jsp">게시판</a></li>
+			
+		</ul>
 	</c:if>
 	
 	<c:if test="${sessionScope.loginId == null }">
