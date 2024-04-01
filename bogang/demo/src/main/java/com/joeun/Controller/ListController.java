@@ -19,45 +19,66 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class ListController implements Initializable {
+public class ListController implements Initializable{
+
+	    @FXML
+    private TableView<Board> boardTableView;
+
     @FXML
-	public TableView<Board> boardTableView;
-	
-	@FXML
-	public TableColumn<Board, Integer> colNo;
-	@FXML
-	public TableColumn<Board, String> colTitle;
-	@FXML
-	public TableColumn<Board, String> colWriter;
-	@FXML
-	public TableColumn<Board, String> colRegDate;
-	@FXML
-	public TableColumn<Board, String> colView;
+    private TableColumn<Board, Integer> colNo;
 
-    private BoardService boardService = new BoardServiceImpl();
+    @FXML
+    private TableColumn<Board, String> colRegDate;
 
+    @FXML
+    private TableColumn<Board, String> colTitle;
+
+    @FXML
+    private TableColumn<Board, String> colView;
+
+    @FXML
+    private TableColumn<Board, String> colWriter;
+
+	private BoardService boardService = new BoardServiceImpl();
 
     @FXML
     void moveToInsert(ActionEvent event) throws IOException {
-        App.setRoot("board/insert");
+		App.setRoot("board/insert");
     }
 
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-        // 게시글 목록 조회
-        List<Board> boardList = boardService.list();
+	@Override
+<<<<<<< HEAD
+	public void initialize(URL arg0, ResourceBundle arg1) {
+=======
+	public void initialize(URL location, ResourceBundle resources) {
+		// 게시글 목록 조회
+		List<Board> boardList = boardService.list();
+>>>>>>> refs/remotes/origin/main
 
-        colNo.setCellValueFactory( new PropertyValueFactory<>("No"));
-		colTitle.setCellValueFactory( new PropertyValueFactory<>("Title"));
-		colWriter.setCellValueFactory( new PropertyValueFactory<>("Writer"));
-		colRegDate.setCellValueFactory( new PropertyValueFactory<>("RegDate"));
-		colView.setCellValueFactory( new PropertyValueFactory<>("View"));
+<<<<<<< HEAD
+		List<Board> boardList = boardService.list();
+
+    		colNo.setCellValueFactory(new PropertyValueFactory<>("No"));
+=======
+		colNo.setCellValueFactory(new PropertyValueFactory<>("No"));
+>>>>>>> refs/remotes/origin/main
+		colTitle.setCellValueFactory(new PropertyValueFactory<>("Title"));
+		colWriter.setCellValueFactory(new PropertyValueFactory<>("Writer"));
+		colRegDate.setCellValueFactory(new PropertyValueFactory<>("RegDate"));
+		colView.setCellValueFactory(new PropertyValueFactory<>("View"));
 		
-		// 테이블뷰에 데이터 추가하기
+		// 테이블뷰에 데이터 추가 하기
 		ObservableList<Board> list = FXCollections.observableArrayList(
-            boardList
+			boardList
 		);
-		
+
 		boardTableView.setItems(list);
-    }
+
+	}
+<<<<<<< HEAD
+    
 }
+=======
+
+}
+>>>>>>> refs/remotes/origin/main

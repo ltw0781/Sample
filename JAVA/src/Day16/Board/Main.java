@@ -29,7 +29,7 @@ public class Main {
 		System.out.println("4. 게시글 수정");
 		System.out.println("5. 게시글 삭제");
 		System.out.println("0. 프로그램 종료");
-		System.out.println("######## 번호 입력 : ");
+		System.out.print("######## 번호 입력 : ");
 	}
 	
 	/**

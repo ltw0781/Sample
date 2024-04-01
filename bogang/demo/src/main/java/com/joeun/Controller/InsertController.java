@@ -1,5 +1,9 @@
 package com.joeun.Controller;
 
+import java.io.IOException;
+
+import com.joeun.App;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -17,8 +21,13 @@ public class InsertController {
     private TextField tWriter;
 
     @FXML
-    void insert(ActionEvent event) {
+    void insert(ActionEvent event) throws IOException {
         
     }
 
+<<<<<<< HEAD
+
 }
+=======
+}
+>>>>>>> refs/remotes/origin/main
