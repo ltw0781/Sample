@@ -47,6 +47,9 @@
 		<a href="<%= request.getContextPath() %>/board/update.jsp?no=<%= board.getNo() %>">
 			수정
 		</a>
+		<a href="<%= request.getContextPath() %>/board/delete.jsp?no=<%= board.getNo() %>">
+			삭제
+		</a>
 	</div>
 </body>
 </html>

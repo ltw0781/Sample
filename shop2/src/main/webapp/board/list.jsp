@@ -22,7 +22,7 @@
 		
 	%>
 	<h1>게시글 목록</h1>
-	<a href="<%= request.getContextPath() %>/board/insrt.jsp">글쓰기</a>
+	<a href="<%= request.getContextPath() %>/board/insert.jsp">글쓰기</a>
 	<table border="1">
 		<tr>
 			<th>번호</th>
@@ -57,15 +57,3 @@
 	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
