@@ -13,6 +13,7 @@
 <head>
 <meta charset="UTF-8">
 <title>게시글 목록</title>
+<jsp:include page="/layout/link.jsp" />
 </head>
 <body>
 	<%
@@ -21,6 +22,12 @@
 		
 		
 	%>
+	
+		<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
+	
+	<div class="container">
+	
 	<h1>게시글 목록</h1>
 	<a href="<%= request.getContextPath() %>/board/insert.jsp">글쓰기</a>
 	<table border="1">
@@ -53,6 +60,16 @@
 			}
 		%>
 	</table>
+	
+	</div>
+	
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
+	
+	<!-- 스크립트 -->
+	<jsp:include page="/layout/script.jsp" />
+	
+	
 	
 	
 </body>

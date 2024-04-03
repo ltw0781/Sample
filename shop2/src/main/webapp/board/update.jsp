@@ -22,8 +22,8 @@
 	%>
 	<h1>게시글 수정</h1>
 	<% if( board != null && board.getNo() > 0 ) { %>
-	<form action="<%= request.getContextPath() %>/board/update_pro.jsp" method="post">
-	<input type="hidden" name="no" value="<%= board.getNo()%>" />
+	<form id="form" action="<%= request.getContextPath() %>/board/update_pro.jsp" method="post">
+	<input type="hidden" id="no" name="no" value="<%= board.getNo()%>" />
 	<table border="1">
 		<tr>
 			<th>제목</th>
@@ -46,6 +46,7 @@
 		</tr>	
 	</table>
 	<input type="submit" value="수정" />
+	<button type="button" onclick="deletePro()">삭제</button>
 	</form>
 	<% } else { %>
 		<h3>조회된 게시글이 없습니다.</h3>
@@ -59,6 +60,19 @@
 			수정
 		</a>
 	</div>
+	
+	<script>
+		function deletePro(){
+			const form =document.getElementById('form')
+			const no =document.getElementById('no').value
+			
+			// action 속성을 삭제요청 경로로 변경
+			form.action = 'delete.jsp?no=' + no
+			// 입력양식 폼 제출
+			form.submit()
+			
+		}
+	</script>
 	
 	
 </body>

@@ -23,13 +23,7 @@ if (result > 0){
 }else{
 	// 수정 실패
 	response.sendRedirect(root + "/board/read.jsp?no=" + no + "&msg=0");
+	// response.sendRedirect(root + "/board/update.jsp?no=" + no + "&msg=0");
 }
-
-
-
-
-
-
-
 
 %>
