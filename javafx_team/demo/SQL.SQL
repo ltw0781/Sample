@@ -1,0 +1,6 @@
+-- Active: 1709601463242@@127.0.0.1@1521
+ALTER USER joeun ACCOUNT UNLOCK;
+
+SELECT *
+  FROM BOARD
+ WHERE username = 'joeun';

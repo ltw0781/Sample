@@ -35,7 +35,6 @@ public class Controller implements Initializable{
 	public TableColumn<Board, String> colView;
 	
 
-	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		Board board1 = new Board("제목1", "작성자1", "내용1");

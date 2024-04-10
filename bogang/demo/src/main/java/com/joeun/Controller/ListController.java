@@ -47,11 +47,21 @@ public class ListController implements Initializable{
     }
 
 	@Override
+<<<<<<< HEAD
+	public void initialize(URL arg0, ResourceBundle arg1) {
+=======
 	public void initialize(URL location, ResourceBundle resources) {
 		// 게시글 목록 조회
 		List<Board> boardList = boardService.list();
+>>>>>>> refs/remotes/origin/main
 
+<<<<<<< HEAD
+		List<Board> boardList = boardService.list();
+
+    		colNo.setCellValueFactory(new PropertyValueFactory<>("No"));
+=======
 		colNo.setCellValueFactory(new PropertyValueFactory<>("No"));
+>>>>>>> refs/remotes/origin/main
 		colTitle.setCellValueFactory(new PropertyValueFactory<>("Title"));
 		colWriter.setCellValueFactory(new PropertyValueFactory<>("Writer"));
 		colRegDate.setCellValueFactory(new PropertyValueFactory<>("RegDate"));
@@ -65,5 +75,10 @@ public class ListController implements Initializable{
 		boardTableView.setItems(list);
 
 	}
+<<<<<<< HEAD
+    
+}
+=======
 
 }
+>>>>>>> refs/remotes/origin/main
