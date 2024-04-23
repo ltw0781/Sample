@@ -9,24 +9,40 @@
 <head>
 <meta charset="UTF-8">
 <title>메인 페이지</title>
+<!-- css -->
+<jsp:include page="/layout/link.jsp" />
 </head>
 <body>
-	<h1>shop</h1>
-	<h3>메인 화면</h3>
+
+	<!-- 헤더 -->
+	<jsp:include page="/layout/header.jsp" />
 	
-	<c:if test="${sessionScope.loginId != null }">
-		<h5>${sessionScope.loginId } 님 환영합니다.</h5>
-		<a href="logout.jsp">로그아웃</a>
-		<ul>
-			<li><a href="<%= request.getContextPath() %>/board/list.jsp">게시판</a></li>
+	
+	<!-- 컨텐츠 영역 -->
+	<div class="container">
+		<h1>shop</h1>
+		<h3>메인 화면</h3>
+	
+		<c:if test="${sessionScope.loginId != null }">
+			<h5>${sessionScope.loginId } 님 환영합니다.</h5>
+			<a href="logout.jsp">로그아웃</a>
+			<ul>
+				<li><a href="<%= request.getContextPath() %>/board/list.jsp">게시판</a></li>
 			
-		</ul>
-	</c:if>
+			</ul>
+		</c:if>
+		<!-- 비로그인 시 -->
+		<c:if test="${sessionScope.loginId == null }">
+			<a href="join.jsp">회원가입</a>
+			<a href="login.jsp">로그인</a>
+		</c:if>
+	</div>
 	
-	<c:if test="${sessionScope.loginId == null }">
-		<a href="join.jsp">회원가입</a>
-		<a href="login.jsp">로그인</a>
-	</c:if>
+	
+	<!-- 푸터 -->
+	<jsp:include page="/layout/footer.jsp" />
+	<script src="<%= request.getContextPath() %>/static/js/script.js"></script>
+	
 </body>
 </html>
 
