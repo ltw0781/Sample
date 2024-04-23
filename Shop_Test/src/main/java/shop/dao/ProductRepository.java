@@ -1,5 +1,7 @@
 package shop.dao;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import shop.dto.Product;
@@ -65,7 +67,6 @@ public class ProductRepository extends JDBConnection {
 	}
 
 }
-
 
 
 

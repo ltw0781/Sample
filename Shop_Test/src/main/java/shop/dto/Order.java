@@ -20,26 +20,6 @@ public class Order {
 	public Order() {
 		
 	}
-	
-	
-
-	public Order(int orderNo, String cartId, String shipName, String zipCode, String country, String address,
-			String date, String userId, int totalPrice, String phone, String orderPw) {
-		super();
-		this.orderNo = orderNo;
-		this.cartId = cartId;
-		this.shipName = shipName;
-		this.zipCode = zipCode;
-		this.country = country;
-		this.address = address;
-		this.date = date;
-		this.userId = userId;
-		this.totalPrice = totalPrice;
-		this.phone = phone;
-		this.orderPw = orderPw;
-	}
-
-
 
 	public int getOrderNo() {
 		return orderNo;

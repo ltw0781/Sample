@@ -7,6 +7,9 @@
 	<title>Shop</title>
 	<jsp:include page="/layout/meta.jsp" /> <jsp:include page="/layout/link.jsp" />
 </head>
+
+
+
 <body>   
 	
 	<jsp:include page="/layout/header.jsp" />
@@ -16,35 +19,35 @@
 	
 	<!-- 회원 가입 영역 -->
 	<div class="container shop p-5 mb-5" >
-		<form action="join_pro.jsp" name="joinForm" method="post" >
+		<form action="join_pro.jsp" name="joinForm" method="post"  onsubmit="return validateForm();" >
 		
 			<div class="input-group mb-3 row">
-				<label class="input-group-text col-md-4" id="">아이디</label>
+				<label class="input-group-text col-md-4" id="id">아이디</label>
 				<input type="text" class="form-control col-md-8" 
 					   name="id" placeholder="아이디" required>
 			</div>
 			
 			<div class="input-group mb-3 row">
-				<label class="input-group-text col-md-4" id="">비밀번호</label>
+				<label class="input-group-text col-md-4" >비밀번호</label>
 				<input type="password" class="form-control col-md-8" 
 					   name="pw" placeholder="비밀번호" required>
 			</div>
 			
 			<div class="input-group mb-3 row">
-				<label class="input-group-text col-md-4" id="">비밀번호 확인</label>
+				<label class="input-group-text col-md-4" >비밀번호 확인</label>
 				<input type="password" class="form-control col-md-8" 
 					   name="pw_confirm" placeholder="비밀번호 확인" required>
 			</div>
 			
 			<div class="input-group mb-3 row">
-				<label class="input-group-text col-md-4" id="">이름</label>
+				<label class="input-group-text col-md-4" id="name">이름</label>
 				<input type="text" class="form-control col-md-8" 
 					   name="name" placeholder="이름" required>
 			</div>
 			
 			<div class="input-group mb-3 row">
 				<div class="col-md-4 p-0">
-					<label class="input-group-text" id="">성별</label>
+					<label class="input-group-text" id="gender">성별</label>
 				</div>
 				<div class="col-md-8 d-flex align-items-center">
 					<div class="radio-box d-flex">
@@ -65,7 +68,7 @@
 			
 			<div class="input-group mb-3 row">
 				<div class="col-md-4 p-0">
-					<label class="input-group-text" id="">생일</label>
+					<label class="input-group-text" id="Bir">생일</label>
 				</div>
 				<div class="col-md-8 p-0">
 					<div class="row d-flex justify-content-between w-100 m-0">
@@ -98,7 +101,7 @@
 			</div>
 			
 			<div class="input-group mb-3 row">
-				<label class="input-group-text col-md-4" id="">이메일</label>
+				<label class="input-group-text col-md-4" id="eMail">이메일</label>
 				
 				<div class="row justify-content-between col-md-8 align-items-center p-0">
 					<div class="col-sm-5 col-md-5 px-0">
@@ -119,13 +122,13 @@
 			</div>
 			
 			<div class="input-group mb-3 row">
-				<label class="input-group-text col-md-4" id="">전화번호</label>
+				<label class="input-group-text col-md-4" id="pNo">전화번호</label>
 				<input type="text" class="form-control col-md-8" 
 					   name="phone" placeholder="전화번호">
 			</div>
 			
 			<div class="input-group mb-3 row">
-				<label class="input-group-text col-md-4" id="">주소</label>
+				<label class="input-group-text col-md-4" id="address">주소</label>
 				<input type="text" class="form-control col-md-8" 
 					   name="address" placeholder="주소">
 			</div>
@@ -145,8 +148,89 @@
 	<jsp:include page="/layout/footer.jsp" />
 	<jsp:include page="/layout/script.jsp" />
 </body>
-</html>
 
+<script>
+
+    function validateForm() {
+    	
+        var pw = document.getElementById("pw").value;
+        var pw_confirm = document.getElementById("pw_confirm").value;
+        
+        alert('sadfasd');
+        console.log(pw);
+        return;
+        
+        // 비밀번호와 비밀번호 확인이 일치하는지 확인
+        if (pw !== pw_confirm) {
+            alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+            return false;
+        }
+        
+        
+        // 비밀번호의 정규식 검사
+        var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        if (!passwordRegex.test(pw)) {
+            alert("비밀번호는 8자 이상의 영문과 숫자 조합이어야 합니다.");
+            return false;
+        }
+        
+        // 이름 유효성 검사 (숫자가 포함되어 있지 않은지)
+        var name = document.getElementById("user_name").value;
+        var nameRegex = /^[가-힣]+$/;
+        if (!nameRegex.test(name) || !name) {
+            alert("이름은 한글로만 입력해야 합니다.");
+            return false;
+        }
+
+        // 주민등록번호 유효성 검사
+        var age1 = document.getElementById("user_age1").value; // 주민등록번호 앞자리
+        var age2 = document.getElementById("user_age2").value; // 주민등록번호 뒷자리
+        
+        // 주민등록번호 앞자리 정규표현식
+        var age1Regex = /^\d{6}$/;
+        if (!age1Regex.test(age1)) {
+            alert("주민등록번호 앞자리는 6자리의 숫자로 입력해야 합니다.");
+            return false;
+        }
+        
+        // 주민등록번호 뒷자리 정규표현식 
+        var age2Regex = /^\d{7}$/;
+        if (!age2Regex.test(age2)) {
+            alert("주민등록번호 뒷자리는 7자리의 숫자로 입력해야 합니다.");
+            return false;
+        }
+        
+        // 주민등록번호 전체
+        var age = age1.toString() + '-' + age2.toString();
+        
+        // 전화번호 유효성 검사 (숫자만 포함되어 있는지)
+        var phone = document.getElementById("user_pno").value;
+        var phoneRegex = /^[0-9]+$/;
+        if (!phoneRegex.test(phone)) {
+            alert("전화번호는 숫자로만 입력해야 합니다.");
+            return false;
+        }
+        
+        // 주소 유효성 검사(아무 값도 들어오지 않으면 경고창)
+        var address = document.getElementById("user_address").value;
+        if (address.trim() === "") {
+        	// trim() : 문자열의 양 끝에서 공백을 제거한 새로운 문자열을 반환하는 함수
+            alert('주소를 입력해주세요.');
+            return false;
+        }
+        
+        // 아이디 중복 확인 여부 체크
+        var idChecked = document.getElementById("idChecked").value;
+        if (idChecked !== "true") {
+            alert("아이디 중복 확인을 해주세요.");
+            return false;
+        }
+        return true; 
+    }
+    
+    </script>
+
+</html>
 
 
 

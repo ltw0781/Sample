@@ -23,7 +23,7 @@
 			      	
 			      <% } %>
 			      <li>
-			        <a href="<%= root %>/user/order.jsp" class="nav-link link-body-emphasis">
+			        <a href="<%= request.getContextPath() %>/user/order.jsp" class="nav-link link-body-emphasis">
 			          주문내역
 			        </a>
 			      </li>
@@ -40,8 +40,8 @@
 			<!-- 마이 페이지 -->
 			<div class="container shop m-auto mb-5">
 				<div class="btn-box d-grid gap-2">
-					<a href="<%= root %>/user/update.jsp" class="btn btn-outline-primary btn-lg px-4 gap-3">회원정보 수정</a>
-					<a href="<%= root %>/user/order.jsp" class="btn btn-outline-primary btn-lg px-4 gap-3">주문내역</a>
+					<a href="<%= request.getContextPath() %>/user/update.jsp" class="btn btn-outline-primary btn-lg px-4 gap-3">회원정보 수정</a>
+					<a href="<%= request.getContextPath() %>/user/order.jsp" class="btn btn-outline-primary btn-lg px-4 gap-3">주문내역</a>
 				</div>
 			</div>
 			
@@ -53,7 +53,6 @@
 	
 </body>
 </html>
-
 
 
 

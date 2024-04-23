@@ -15,9 +15,7 @@
 </head>
 <body>   
 	<% 
-	String rememberId = "";
-	
-	
+
 		// ...
 	
 	
@@ -35,14 +33,14 @@
 			<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
 			    <ul class="nav nav-pills flex-column mb-auto">
 			      <!-- 로그인 시 -->
-			      <% if( rememberId != null && rememberId.equals("on") ) { %>
+			      <% if( login ) { %>
 			      <li class="nav-item">
-			        <a href="<%= request.getContextPath() %>/user/index.jsp" class="nav-link link-body-emphasis">
+			        <a href="<%= root %>/user/index.jsp" class="nav-link link-body-emphasis">
 			          마이 페이지
 			        </a>
 			      </li>
 			      <li class="nav-item">
-			        <a href="<%= request.getContextPath() %>/user/update.jsp" class="nav-link link-body-emphasis">
+			        <a href="<%= root %>/user/update.jsp" class="nav-link link-body-emphasis">
 			          회원정보 수정
 			        </a>
 			      </li>
@@ -70,7 +68,7 @@
 			
 			<!-- 주문 내역 영역 -->
 			<div class="container shop m-auto mb-5">
-					<form action="<%= request.getContextPath() %>/user/order_pro.jsp" method="post">
+					<form action="<%= root %>/user/order_pro.jsp" method="post">
 					<% if( !login ) { %>
 						<div class="mb-5">
 							<table class="table">
@@ -202,7 +200,6 @@
 	</script>
 </body>
 </html>
-
 
 
 

@@ -2,6 +2,8 @@ package com.joeun;
 
 import java.io.IOException;
 
+import com.joeun.DAO.JDBConnection;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
