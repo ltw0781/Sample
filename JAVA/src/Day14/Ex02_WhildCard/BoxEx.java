@@ -1,6 +1,6 @@
 package Day14.Ex02_WhildCard;
 
-import Day05.Class.Pikachu;
+import Day05.Class.Pikachu1;
 import Day05.Class.Raichu;
 
 public class BoxEx {
@@ -18,9 +18,9 @@ public class BoxEx {
 		int value = box2.getT();
 		System.out.println("box2 : " + value);
 		
-		Box<Pikachu>monsterBall = new Box<Pikachu>();
-		monsterBall.setT(new Pikachu());
-		Pikachu pikachu = monsterBall.getT();
+		Box<Pikachu1>monsterBall = new Box<Pikachu1>();
+		monsterBall.setT(new Pikachu1());
+		Pikachu1 pikachu = monsterBall.getT();
 		System.out.println("pikachu : " + pikachu);
 		
 		// 제네릭 와일드카드

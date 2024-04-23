@@ -2,7 +2,7 @@ package Day06.Ex03_PassingArgument;
 
 
 
-import Day05.Class.Pikachu;
+import Day05.Class.Pikachu1;
 
 /**
  * 인자전달방식
@@ -13,7 +13,7 @@ public class CallByReference {
 	public static void main(String[] args) {
 		
 		int arr[]= new int[5];
-		Pikachu pikachu = new Pikachu();
+		Pikachu1 pikachu = new Pikachu1();
 		
 		
 		for (int i = 0 ; i< arr.length ; i++) {
@@ -41,7 +41,7 @@ public class CallByReference {
 		System.out.println(pikachu);
 	}
 
-	private static void setObject(Pikachu pikachu) {
+	private static void setObject(Pikachu1 pikachu) {
 		// TODO Auto-generated method stub
 		pikachu.energy = 1000;
 		pikachu.type = "에스퍼";

@@ -20,7 +20,7 @@ public class Raichu extends Pikachu{
 	// @Override 어노테이션 : 기능활성화의 역할을 할 수 있음. / 알려주는 역할도 함
 	@Override
 	public String aAttack() {
-		System.out.println("공격 A0 : " + super.aAttack());
+		System.out.println("공격 A : " + super.aAttack());
 		return "백만볼트";
 	}
 

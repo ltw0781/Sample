@@ -22,9 +22,9 @@ public class Pikachu {
 		public Pikachu() {
 			// this : 생성자에서 다른 생성자를 호출하는 메소드
 			// this() 메소드는 생성자 내에서 첫문장이 되어야한다.
-			this(100, "전기");
-//			energy = 100;
-//			type = "전기";
+//			this(100, "전기");
+			this.energy = 100;
+			this.type = "전기";
 			
 		}
 		
@@ -32,8 +32,8 @@ public class Pikachu {
 		// 메소드 오버로딩
 		// : 같은이름의 메소드를 매개변수의 타입/순서/개수를/다르게 하여 중복 정의하는것
 		public Pikachu(int energy, String type) {
-//			this.type = type;
-//			this.energy = energy;
+			this.type = type;
+			this.energy = energy;
 			
 		}
 		

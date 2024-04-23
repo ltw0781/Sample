@@ -1,6 +1,6 @@
 package Day13.Ex03_Generics;
 
-import Day05.Class.Pikachu;
+import Day05.Class.Pikachu1;
 
 public class BoxEx {
 	
@@ -25,9 +25,9 @@ public class BoxEx {
 		int value = box2.getT();
 		System.out.println("box2 : " + value);
 		
-		Box<Pikachu>monsterBall = new Box<Pikachu>();
-		monsterBall.setT(new Pikachu());
-		Pikachu pikachu = monsterBall.getT();
+		Box<Pikachu1>monsterBall = new Box<Pikachu1>();
+		monsterBall.setT(new Pikachu1());
+		Pikachu1 pikachu = monsterBall.getT();
 		System.out.println("pikachu : " + pikachu);
 		
 		// *제네릭 기번의 타입으로는 "클래스"만 사용 할 수 있다.
