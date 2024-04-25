@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.aloha.springmybatis.dto.Board;
 
-@Mapper
+@Mapper     // MyBatis 의 매퍼 인터페이스로 지정하는 어노테이션
 public interface BoardMapper {
 
     // 게시글 목록

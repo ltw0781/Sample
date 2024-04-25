@@ -2,8 +2,6 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
-
-
 <configuration>
 
 	<!-- 설정 -->
@@ -17,7 +15,7 @@
 	<typeAliases>
 		<!-- 테이블과 매핑할 DTO가 있는 패키지 경로 지정 -->
 		<package name="com.aloha.springmybatis.dto"/>
-	</typeAliases>
+	</typeAliases>	
 
 
 </configuration>
