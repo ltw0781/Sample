@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="demo/src/main/java"/>
+	<classpathentry kind="src" path="demo/src/test/java"/>
+	<classpathentry kind="src" path="sample/src/main/java"/>
+	<classpathentry kind="src" path="sample/src/test/java"/>
+	<classpathentry kind="src" path="spring-di/src/main/java"/>
+	<classpathentry kind="src" path="spring-mybatis/src/main/java"/>
+	<classpathentry kind="src" path="spring-mybatis/src/test/java"/>
+	<classpathentry kind="src" path="spring-request/src/main/java"/>
+	<classpathentry kind="src" path="spring-request/src/test/java"/>
+	<classpathentry excluding="com/aloha/springresponse/controller/" kind="src" path="spring-response/src/main/java"/>
+	<classpathentry kind="src" path="spring-response/src/main/java/com/aloha/springresponse/controller"/>
+	<classpathentry kind="src" path="spring-response/src/test/java"/>
+	<classpathentry kind="src" path="spring-rest/src/main/java"/>
+	<classpathentry kind="src" path="spring-rest/src/test/java"/>
+	<classpathentry kind="src" path="spring-swagger/src/main/java"/>
+	<classpathentry kind="src" path="spring-swagger/src/test/java"/>
+	<classpathentry kind="src" path="sprin-note/src/main/java"/>
+	<classpathentry kind="src" path="sprin-note/src/test/java"/>
+	<classpathentry kind="lib" path="demo/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="sample/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="spring-di/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="spring-mybatis/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="spring-request/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="spring-response/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="spring-rest/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="spring-swagger/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="sprin-note/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
