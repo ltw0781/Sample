@@ -38,7 +38,10 @@
                         <!-- 파일 목록 -->
                         <th:block th:each="file : ${fileList}">
                             <li>
+                                <!-- 파일명 (다운로드) (2024-04-26 오타 )--> 
                                 <a th:href="|/file/${file.no}|" th:text="${file.originName}"></a>
+                                <!-- 파일 삭제 -->
+                                <button type="button" th:onclick="|deleteFile(${file.no})|">삭제</button>
                             </li>
                         </th:block>
                     </ul>
@@ -65,6 +68,40 @@
         function moveList() {
             location.href = '/board/list'
         }
+
+        // 파일 삭제
+        function deleteFile(element, no) {
+
+            // alert(no)
+
+            // AJAX 비동기 요청
+            let data = {
+                no : no
+            }
+
+            let request = new XMLHttpRequest()
+
+            // 요청 세팅
+            // request.open(요청메소드, URL)
+            request.open('DELETE', '/file/' + no)
+            request.send()
+
+            request.onreadystatechange = function() {
+
+
+                // 요청 성공 시,
+                if (request.readyState == request.DONE && request.status == 200) {
+                    console.log('파일 삭제 성공')
+                    // 파일 항목 제거
+                    // * 
+                    element.parentNode.remove();
+                }
+            }
+        }
+
+
+
+
     </script>
 </body>
 </html>
