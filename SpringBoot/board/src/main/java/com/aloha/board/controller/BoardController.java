@@ -147,6 +147,12 @@ public class BoardController {      // - /board/~ 경로의 요청은 이 컨트
     public String delete(@RequestParam("no") int no) throws Exception {
         int result = boardService.delete(no);
         if (result > 0) {
+
+            // 첨부파일 삭제
+            Files file = new Files();
+            file.setParentTable("board");
+            file.setParentNo(no);
+            fileService.deleteByParent(file);
             return "redirect:/board/list";
         }
         return "redirect:/board/update?no=" + no + "&error";
