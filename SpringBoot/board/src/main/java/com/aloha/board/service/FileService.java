@@ -1,7 +1,9 @@
 package com.aloha.board.service;
 
-import com.aloha.board.dto.Files;
 import java.util.List;
+
+import com.aloha.board.dto.Files;
+
 public interface FileService {
 
     // 파일 목록

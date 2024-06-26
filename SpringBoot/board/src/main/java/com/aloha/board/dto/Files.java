@@ -1,7 +1,9 @@
 package com.aloha.board.dto;
 
-import org.springframework.web.multipart.MultipartFile;
 import java.util.Date;
+
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Data;
 
 @Data
@@ -19,3 +21,4 @@ public class Files {
     
     private MultipartFile file;
 }
+

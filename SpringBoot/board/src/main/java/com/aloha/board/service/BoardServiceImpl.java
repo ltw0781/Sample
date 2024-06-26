@@ -1,4 +1,5 @@
 package com.aloha.board.service;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,7 @@ import com.aloha.board.dto.Board;
 import com.aloha.board.dto.Files;
 import com.aloha.board.mapper.BoardMapper;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
-@Service
+@Service    // 서비스 역할의 스프링 빈 등록
 public class BoardServiceImpl implements BoardService {
     
     @Autowired
@@ -21,103 +19,79 @@ public class BoardServiceImpl implements BoardService {
     @Autowired
     private FileService fileService;
 
-    @Autowired
-
-
+    /**
+     * 목록 조회
+     */
     @Override
     public List<Board> list() throws Exception {
-        /*
-         * TODO : boardMapper 로 list() 호출
-         *        ➡ List<Board> boardList 로 받아옴
-         *        ➡ return boardList
-         */
-        // 힌트 
         List<Board> boardList = boardMapper.list();
         return boardList;
-        // ...
-
     }
 
+    /**
+     * 게시글 조회
+     * - no 매개변수로 게시글 번호를 전달 받아서
+     *   데이터베이스에 조회 요청
+     */
     @Override
-    public Board select(int no) throws Exception {
-        /*
-         * TODO : boardMapper 로 select(no) 호출
-         *        ➡ Board board 로 받아옴
-         *        ➡ return board
-         */
-        Board board = new Board();
-        board = boardMapper.select(no); 
-        return board;
+    public Board select(int no) throws Exception {        
+        Board board = boardMapper.select(no);
+        // 추가작업
+        
 
+        return board;
     }
 
+    /**
+     * 게시글 등록
+     */
     @Override
     public int insert(Board board) throws Exception {
-         /*
-         * TODO : boardMapper 로 insert(Board) 호출
-         *        ➡ int result 로 데이터 처리 행(개수) 받아옴
-         *        ➡ return result
-         */
         int result = boardMapper.insert(board);
 
+        
+        // 파일 업로드
         String parentTable = "board";
         int parentNo = boardMapper.maxPk();
-
         List<MultipartFile> fileList = board.getFile();
 
-        if(!fileList.isEmpty()) {
+        if( !fileList.isEmpty() ) {
             for (MultipartFile file : fileList) {
                 if( file.isEmpty() ) continue;
-                
-                
 
-                // 파일 정보 등록
-                Files uploadFile = new Files();
-                
+                // 파일 업로드 요청
+                Files uploadFile = new Files();               
                 uploadFile.setParentTable(parentTable);
                 uploadFile.setParentNo(parentNo);
                 uploadFile.setFile(file);
-
-                fileService.upload(uploadFile);
                 
+                fileService.upload(uploadFile);
             }
         }
 
-        if(result > 0) {
-            return result;
-        }
-        return 0;
+        return result;
     }
 
+
+    /**
+     * 게시글 수정
+     */
     @Override
     public int update(Board board) throws Exception {
-        /*
-         * TODO : boardMapper 로 update(Board) 호출
-         *        ➡ int result 로 데이터 처리 행(개수) 받아옴
-         *        ➡ return result
-         */
         int result = boardMapper.update(board);
-
-        if(result > 0) {
-            return result;
-        }
-        return 0;
-
+        return result;
     }
 
+
+    /**
+     * 게시글 삭제
+     */
     @Override
     public int delete(int no) throws Exception {
-        /*
-         * TODO : boardMapper 로 delete(no) 호출
-         *        ➡ int result 로 데이터 처리 행(개수) 받아옴
-         *        ➡ return result
-         */
         int result = boardMapper.delete(no);
-        
-        if(result > 0) {
-            return result;
-        }
-        return 0;
+        return result;
     }
 
+
 }
+
